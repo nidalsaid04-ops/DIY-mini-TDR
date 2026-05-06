@@ -1,6 +1,8 @@
 # DIY-mini-TDR
 DIY Mini TDR – Time Domain Reflectometer
 
+![image](https://github.com/nidalsaid04-ops/DIY-mini-TDR/blob/main/images/image.jpg)
+
 ### TDR (Time Domain Reflectometer) ?
 TDR is An instrument that sends a signal down a transmission line and then analyzes the reflection. By measuring the reflection delay, the approximate cable length can be estimated and identify impedance mismatches, TDR systems can also be used to Find a cable fault underground ! Overhead, in the air, before you take it down! Is it damaged inside a wall? Has a staple penetrated it? Be the hero and go right to the trouble! 
 
@@ -18,3 +20,4 @@ The equivalent output resistance is approximately:
 Req ≈ 44 Ω
 The battery can be just about anything you want to use from 2 to 5 volts. I just glued the board to the case. The circuit only draws 4 milliamps or so. Solder the negative of the supply to the ground pin. The positive of the supply goes to pin 14. Perhaps not necessary, but good practice, is to solder a .1 microfarad capacitor from pin 14 to ground as a bypass for the power.
 
+![image](https://github.com/nidalsaid04-ops/DIY-mini-TDR/blob/main/images/Figure_1.jpg)
