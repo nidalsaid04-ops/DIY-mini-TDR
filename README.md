@@ -30,7 +30,9 @@ The mathematical foundation of TDR measurements is elementary but important.TDR 
 Most TDR meters will perform the necessary calculations internally and display a numerical result.
 The cable length can be estimated using:
 
-$$L = {Δt * C * V.F.\over 2}$$
+$$
+L = \frac{\Delta t \cdot c \cdot VF}{2}
+$$
 
 Where :
   - L = cable length
