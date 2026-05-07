@@ -8,7 +8,7 @@ TDR is An instrument that sends a signal down a transmission line and then analy
 
 ### The goal of this project is :
 The goal of this project is to explore whether it is possible to build a low-cost TDR using simple components and basic laboratory tools.
-While searching for a SCHMITT tringer, I found this to be my test gear. AAfter searching through my electronics parts inventory, I found several SN74HCT14 hex inverter logic ICs. They can be purchased new for 50 cents each if you must buy them :)
+While searching for a SCHMITT tringer, I found this to be my test gear. A after searching through my electronics parts inventory, I found several SN74HCT14 hex inverter logic ICs. They can be purchased new for 50 cents each if you must buy them :)
 The first inverter sections form an oscillator with R1 and C1 setting the frequency to around 13KHz.This feeds five more sections to buffer and isolate the oscillator. Keeping the connections short and the components small allows the output rise times to be under 5 nanoseconds, faster than my 50 MHz oscilloscope can track.
 
 ### How build it:
@@ -45,3 +45,41 @@ The division by 2 is required because the signal travels to the end of the cable
 - Twisted pair cable: 64% to 74%
 ### The Reflection Coefficient 
 TDR measurements are described in terms of a Reflection Coefficient, ρ (rho). The coefficient ρ is the ratio of the reflected pulse amplitude to the incident pulse amplitude:
+
+$$
+\rho = {V_{reflected} \over V_{incident}}
+$$
+
+For a fixed termination ZL, ρ can also be expressed in terms of the transmission line characteristic impedance, ZO and the load impedance ZL.
+
+
+$$
+\rho = {Z_L - Z_0 \over Z_L + Z_0}
+$$
+
+Now that we have the formulas, we can see that when we input the numbers that represent the identical load, the short circuit, and the open load, we can see that ρ has a range of values ​​from +1 to -1, where 0 represents the matched impedance.
+
+Where : 
+  - ρ is 0 the load is matched. There are no reflections. 
+  - ρ is +1 is infinite, an open circuit is implied. the reflected wave adds constructively to the incident wave.
+  - ρ is -1 implies a short circuit. the reflected wave is inverted relative to the incident wave.
+
+Calculating the Impedance of the Transmission Line and the Load The characteristic impedance Z0, or the load impedance ZL, can be calculated with the value of ρ :
+
+$$
+Z_L = Z_0 \cdot {1+\rho \over 1-\rho}
+$$
+
+## Experimental Results
+
+> [!NOTE]
+> Due to limited available equipment, testing was performed using a short 60 cm BNC-to-SMA coaxial cable.  
+> Although the cable length is relatively short for traditional TDR applications, it is still sufficient to demonstrate:
+>
+> - Transmission line reflections
+> - Impedance mismatch behavior
+> - Open-circuit and short-circuit reflections
+> - Basic propagation delay effects
+>
+> The primary purpose of this setup is educational experimentation and validation of the TDR operating principle rather than precise long-distance cable fault measurement.
+
