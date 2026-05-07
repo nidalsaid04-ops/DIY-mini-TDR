@@ -57,8 +57,7 @@ $$
 \rho = {Z_L - Z_0 \over Z_L + Z_0}
 $$
 
-Now that we have the formulas, we can see that when we input the numbers that represent the identical load, the short circuit, and the open load, we can see that ρ has a range of values ​​from +1 to -1, where 0 represents the matched impedance.
-
+Now that we have the formulas, we can see that when we input the numbers that represent the identical load, the short circuit, and the open load, we can see that ρ has a range of values ​​from +1 to -1.
 Where : 
   - ρ is 0 the load is matched. There are no reflections. 
   - ρ is +1 is infinite, an open circuit is implied. the reflected wave adds constructively to the incident wave.
