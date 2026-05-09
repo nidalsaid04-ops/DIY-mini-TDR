@@ -96,10 +96,29 @@ Where :
 ![image](https://github.com/nidalsaid04-ops/DIY-mini-TDR/blob/main/images/results/short-circuit.png)
 **Figure 5** A short circuit. The reflected signal changes direction due to the shorted cable end.
 
+
 Calculating the Impedance of the Transmission Line and the Load The characteristic impedance Z0, or the load impedance ZL, can be calculated with the value of ρ :
 
 $$
 Z_L = Z_0 \cdot {1+\rho \over 1-\rho}
 $$
+
+## Conclusion and Limitations
+This project demonstrates the feasibility of constructing a simple and inexpensive time-domain reflection (TDR) device using readily available electronic components, such as the Schmidt SN74HCT14 inverter.
+
+Even with minimal components and a low-cost oscilloscope, the following can be observed:
+- Transmission line reflections
+- Impedance mismatch effects
+- Open-circuit and short-circuit behavior
+- Propagation delay in coaxial cables
+  
+The experimental results show that fast logic devices are capable of generating sufficiently sharp edges for basic TDR experiments and transmission line analysis for educational purposes.
+However, this project is a simplified experimental application of Time Reflection Detection (TDR) and some limitations must be considered:
+- The output impedance is approximately 50 ohms.
+- The oscilloscope bandwidth limits the accuracy of rise time measurements.
+- Cable length measurements are approximate and depend on the cable speed factor.
+- The short test cable (60 cm) limits reflection analysis over long distances.
+
+While this design is not intended to replace professional TDR instruments, it provides a practical and easy way to study high-speed signal behavior, impedance matching, and reflection phenomena using inexpensive laboratory equipment.
 
 
