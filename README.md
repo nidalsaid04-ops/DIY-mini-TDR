@@ -8,10 +8,10 @@ TDR is An instrument that sends a signal down a transmission line and then analy
 
 ### The goal of this project is :
 The goal of this project is to explore whether it is possible to build a low-cost TDR using simple components and basic laboratory tools.
-While searching for a SCHMITT tringer, I found this to be my test gear. A after searching through my electronics parts inventory, I found several SN74HCT14 hex inverter logic ICs. They can be purchased new for 50 cents each if you must buy them :)
+While searching for a Schmitt trigger, I found this to be my test gear. After searching through my electronics parts inventory, I found several SN74HCT14 hex inverter logic ICs. They can be purchased new for 50 cents each if you must buy them :)
 The first inverter sections form an oscillator with R1 and C1 setting the frequency to around 13KHz.This feeds five more sections to buffer and isolate the oscillator. Keeping the connections short and the components small allows the output rise times to be under 5 nanoseconds, faster than my 50 MHz oscilloscope can track.
 
-### How build it:
+### How it was built:
 The prototype was built on a small piece of copper-clad board slightly larger than the IC package and the BNC connector.
 Pin 7 of the IC and the BNC ground connection were bent downward and soldered directly to the copper surface to create a solid ground plane and mechanically secure the components.
 The BNC connector was mounted as close as possible to the IC in order to minimize lead inductance and transmission line discontinuities(you need to keep things very short).
@@ -27,7 +27,7 @@ The battery can be just about anything you want to use from 2 to 5 volts. I just
 
 
 ### Basic TDR Principle
-The mathematical foundation of TDR measurements is elementary but important.TDR measurements are primarily based on the integration delay of the reflected waveform.
+The mathematical foundation of TDR measurements is elementary but important.TDR measurements are primarily based on the propagation delay of the reflected waveform.
 Most TDR meters will perform the necessary calculations internally and display a numerical result.
 The cable length can be estimated using:
 
@@ -103,22 +103,22 @@ $$
 Z_L = Z_0 \cdot {1+\rho \over 1-\rho}
 $$
 
-## Conclusion and Limitations
-This project demonstrates the feasibility of constructing a simple and inexpensive time-domain reflection (TDR) device using readily available electronic components, such as the Schmidt SN74HCT14 inverter.
-
-Even with minimal components and a low-cost oscilloscope, the following can be observed:
-- Transmission line reflections
-- Impedance mismatch effects
-- Open-circuit and short-circuit behavior
-- Propagation delay in coaxial cables
+## conclution and Limit
+This project shows how easily accessible electronic components, like the Schmitt-trigger SN74HCT14 inverter, can be used to build a straight forward and affordable time-domain reflection (TDR) device.
+The following can be seen even with simple parts and an inexpensive oscilloscope:
+-Reflections in transmission lines 
+-The effects of impedance mismatch
+-Both short-circuit and open-circuit behavior
+-Coaxial cables propagation delay
   
-The experimental results show that fast logic devices are capable of generating sufficiently sharp edges for basic TDR experiments and transmission line analysis for educational purposes.
-However, this project is a simplified experimental application of Time Reflection Detection (TDR) and some limitations must be considered:
+The experimental findings demonstrate that fast logic devices can produce sufficiently sharp edges for transmission line analysis for educational purposes and simple TDR investigations.
+Nevertheless, some restrictions must be taken into account because this project is a simplified experimental application of Time Domain Reflectometry (TDR):
 - The output impedance is approximately 50 ohms.
 - The oscilloscope bandwidth limits the accuracy of rise time measurements.
 - Cable length measurements are approximate and depend on the cable speed factor.
 - The short test cable (60 cm) limits reflection analysis over long distances.
 
-While this design is not intended to replace professional TDR instruments, it provides a practical and easy way to study high-speed signal behavior, impedance matching, and reflection phenomena using inexpensive laboratory equipment.
+While this design is not intended to replace professional TDR, it provides a practical and easy way to study high-speed signal behavior, impedance matching, and reflection phenomena using inexpensive laboratory equipment.
+:)
 
 
