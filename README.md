@@ -56,6 +56,10 @@ The division by 2 is required because the signal travels to the end of the cable
 >
 > The primary purpose of this setup is educational experimentation and validation of the TDR operating principle rather than precise long-distance cable fault measurement.
 
+![image](https://github.com/nidalsaid04-ops/DIY-mini-TDR/blob/main/images/image_2.jpg)
+
+
+
 ![image](https://github.com/nidalsaid04-ops/DIY-mini-TDR/blob/main/images/results/reflect-1.png)
 **Figure 2** Measured rise time of the DIY TDR pulse generator using the oscilloscope cursors.The measured rise time is approximately 6 ns.
 
