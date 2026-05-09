@@ -23,6 +23,7 @@ Req ≈ 44 Ω
 The battery can be just about anything you want to use from 2 to 5 volts. I just glued the board to the case. The circuit only draws 4 milliamps or so. Solder the negative of the supply to the ground pin. The positive of the supply goes to pin 14. Perhaps not necessary, but good practice, is to solder a 1 microfarad capacitor from pin 14 to ground as a bypass for the power.
 
 ![image](https://github.com/nidalsaid04-ops/DIY-mini-TDR/blob/main/images/Figure_1.jpg)
+**Figure 1** Schematic diagram
 
 
 ### Basic TDR Principle
@@ -43,6 +44,29 @@ Where :
 The division by 2 is required because the signal travels to the end of the cable and then reflects back toward the source. Typical velocity factor values:
 - Coaxial cable: 66% to 85%
 - Twisted pair cable: 64% to 74%
+
+> [!NOTE]
+> Due to limited available equipment, testing was performed using a short 60 cm BNC-to-SMA coaxial cable.  
+> Although the cable length is relatively short for traditional TDR applications, it is still sufficient to demonstrate:
+>
+> - Transmission line reflections
+> - Impedance mismatch behavior
+> - Open-circuit and short-circuit reflections
+> - Basic propagation delay effects
+>
+> The primary purpose of this setup is educational experimentation and validation of the TDR operating principle rather than precise long-distance cable fault measurement.
+
+![image](https://github.com/nidalsaid04-ops/DIY-mini-TDR/blob/main/images/results/reflect-1.png)
+**Figure 2** Measured rise time of the DIY TDR pulse generator using the oscilloscope cursors.The measured rise time is approximately 6 ns.
+
+$$
+L = \frac{6 \times 0.2998 \times 0.66}{2}
+$$
+
+$$
+L \approx 0.593 \text{ m} \approx 59.3 \text{ cm}
+$$
+
 ### The Reflection Coefficient 
 TDR measurements are described in terms of a Reflection Coefficient, ρ (rho). The coefficient ρ is the ratio of the reflected pulse amplitude to the incident pulse amplitude:
 
@@ -59,9 +83,18 @@ $$
 
 Now that we have the formulas, we can see that when we input the numbers that represent the identical load, the short circuit, and the open load, we can see that ρ has a range of values ​​from +1 to -1.
 Where : 
-  - ρ is 0 the load is matched. There are no reflections. 
+  - ρ is 0 the load is matched. There are no reflections.
+    
+![image](https://github.com/nidalsaid04-ops/DIY-mini-TDR/blob/main/images/results/impedance-matchet.png)
+**Figure 3** A matched load. Almost no reflection is visible because the cable impedance matches the termination impedance.
   - ρ is +1 is infinite, an open circuit is implied. the reflected wave adds constructively to the incident wave.
+    
+![image](https://github.com/nidalsaid04-ops/DIY-mini-TDR/blob/main/images/results/open-circuit.png)
+**Figure 4** An open circuit. The voltage rises because the signal is fully reflected at the open end of the cable.
   - ρ is -1 implies a short circuit. the reflected wave is inverted relative to the incident wave.
+    
+![image](https://github.com/nidalsaid04-ops/DIY-mini-TDR/blob/main/images/results/short-circuit.png)
+**Figure 5** A short circuit. The reflected signal changes direction due to the shorted cable end.
 
 Calculating the Impedance of the Transmission Line and the Load The characteristic impedance Z0, or the load impedance ZL, can be calculated with the value of ρ :
 
@@ -69,16 +102,4 @@ $$
 Z_L = Z_0 \cdot {1+\rho \over 1-\rho}
 $$
 
-## Experimental Results
-
-> [!NOTE]
-> Due to limited available equipment, testing was performed using a short 60 cm BNC-to-SMA coaxial cable.  
-> Although the cable length is relatively short for traditional TDR applications, it is still sufficient to demonstrate:
->
-> - Transmission line reflections
-> - Impedance mismatch behavior
-> - Open-circuit and short-circuit reflections
-> - Basic propagation delay effects
->
-> The primary purpose of this setup is educational experimentation and validation of the TDR operating principle rather than precise long-distance cable fault measurement.
 
